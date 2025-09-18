@@ -34,6 +34,11 @@ public class UsuarioService implements IUsuarioService {
     public List<Usuario> buscarTodos(){
         return usuarioRepo.findAll();
     }
+    public Usuario deletarUsuario(Long id){
+        Usuario usuario = buscarPorId(id);
+        usuarioRepo.delete(usuario);
+        return usuario;
+    }
 }
 
 

@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.springboot3app2025.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,5 +32,9 @@ public class UsuarioController {
     @PostMapping
     public Usuario novoUsuario(@RequestBody Usuario usuario) {
         return service.novoUsuario(usuario);
+    }
+    @DeleteMapping(value = "/{usuario}")
+    public Usuario deletarUsuario(@PathVariable("usuario") Long id) {
+        return service.deletarUsuario(id);
     }
 }

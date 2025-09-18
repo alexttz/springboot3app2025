@@ -7,5 +7,6 @@ import java.util.List;
 public interface IUsuarioService {
     public Usuario buscarPorId(Long id);
     public Usuario novoUsuario(Usuario usuario);
+    public Usuario deletarUsuario(Long id);
     public List<Usuario> buscarTodos();
 }
